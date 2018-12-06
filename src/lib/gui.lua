@@ -1,7 +1,3 @@
---[[ Secure Centrilized Network ]]--
---[[ GUI part of the SCN system. By -Mappleaf (vk.com/IS2511) ]]--
---[[ Idea by -Mappleaf (vk.com/inga_akuma) ]]--
-
 local component = require("component")
 local term = require("term")
 local colors = require("colors")
