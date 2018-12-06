@@ -1,5 +1,5 @@
 --[[ Secure Centrilized Network ]]--
---[[ NODE part of the SCN system. By IS2511 (vk.com/IS2511) ]]--
+--[[ NODE part of the SCN system. By IS2511 & -Mappleaf (vk.com/IS2511) & (vk.com/inga_akuma) ]]--
 --[[ Idea by -Mappleaf (vk.com/inga_akuma) ]]--
 
 
