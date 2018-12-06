@@ -1,6 +1,6 @@
 --[[ Secure Centrilized Network ]]--
 --[[ NODE part of the SCN system. By IS2511 (vk.com/IS2511) ]]--
---[[Idea invented by -Mappleaf (vk.com/inga_akuma)]]--
+--[[ Idea by -Mappleaf (vk.com/inga_akuma) ]]--
 
 
 local tty = require("tty") -- tty.clear()
