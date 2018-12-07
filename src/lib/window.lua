@@ -2,6 +2,8 @@ local component = require("component")
 local term = require("term")
 gpu = component.gpu
 
+local Menu = require("window-menu")
+
 local Window = {
   wx1 = 0,
   wx2 = 0,
@@ -25,9 +27,12 @@ function Window.create(wx1, wx2, wy1, wy2, type, name)
 
   obj.type = assert(type, "No window type specified.")
   if type == "text" then
-
+    obj.content = ""
   elseif type == "list" then
-
+    obj.list = {}
+  elseif type == "menu" then
+    local menu = {}
+    obj.menu = Menu.create(menu)
   end
 
   if not name then
@@ -54,7 +59,7 @@ function Window.create(wx1, wx2, wy1, wy2, type, name)
   return obj
 end
 
--- Draw/redraw window
+  -- Draw/redraw window
 function Window:draw()
   gpu.set(self.wx1, self.wy1, "╔")
   gpu.set(self.wx2, self.wy1, "╗")
@@ -84,7 +89,7 @@ function Window:draw()
 end
 
 
-  --
+  -- Update window
 function Window:update()
 
 end
