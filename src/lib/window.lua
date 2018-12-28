@@ -2,6 +2,7 @@ local component = require("component")
 local term = require("term")
 gpu = component.gpu
 
+local deepcopy = require("deepcopy").deepcopy
 local Menu = require("window-menu")
 
 local Window = {
@@ -19,7 +20,7 @@ local Window = {
 
   -- Create a window
 function Window.create(wx1, wx2, wy1, wy2, type, name)
-  local obj = Window
+  local obj = deepcopy(Window)
 
   if ((not wx1) or (not wx2) or (not wy1) or (not wy2)) then
     error("Not enough arguments (maybe no size specified).")
@@ -60,7 +61,7 @@ function Window.create(wx1, wx2, wy1, wy2, type, name)
 end
 
   -- Draw/redraw window
-function Window:draw()
+function Window:drawBase()
   gpu.set(self.wx1, self.wy1, "╔")
   gpu.set(self.wx2, self.wy1, "╗")
   gpu.set(self.wx1, self.wy2, "╚")
@@ -85,6 +86,9 @@ function Window:draw()
     gpu.setForeground(0xFFFFFF)
   end
 
+end
+
+function Window:draw()
 
 end
 

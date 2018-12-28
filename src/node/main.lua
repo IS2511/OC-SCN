@@ -1,6 +1,10 @@
---[[ Secure Centrilized Network ]]--
---[[ NODE part of the SCN system. By IS2511 & -Mappleaf (vk.com/IS2511) & (vk.com/inga_akuma) ]]--
---[[ Idea by -Mappleaf (vk.com/inga_akuma) ]]--
+--[[
+  Secure Centrilized Network
+  NODE part of the SCN system.
+
+  Written by IS2511 (vk.com/IS2511)
+  Idea by -Mappleaf (vk.com/inga_akuma)
+]]--
 
 
 local tty = require("tty") -- tty.clear()
@@ -21,7 +25,7 @@ function init()
   m.open(50003) -- VIP port
   m.open(50002) -- Basic port
 
-  m.setStrength(400)
+  m.setStrength(400) -- 400 is max
   m.broadcast(50001, ser.serialize("?"))
 
 end
