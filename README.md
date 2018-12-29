@@ -1,2 +1,2 @@
 # OC-SCN
-Secure Centrilized Network
+Secure Centralized Network
