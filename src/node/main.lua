@@ -1,5 +1,5 @@
 --[[
-  Secure Centrilized Network
+  Secure Centralized Network (github.com/IS2511/OC-SCN)
   NODE part of the SCN system.
 
   Written by IS2511 (vk.com/IS2511)

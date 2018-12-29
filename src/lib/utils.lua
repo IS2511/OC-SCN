@@ -1,35 +1,44 @@
 
-List = {}
+local deepcopy = require("deepcopy").deepcopy
+
+local List = {
+  first = 1,
+  last = 0,
+  list = {}
+}
+
 function List.new ()
-  return {first = 0, last = -1}
+  return deepcopy(List)
 end
 
-function List.pushleft (list, value)
-  local first = list.first - 1
-  list.first = first
-  list[first] = value
+function List:get (index)
+  return self.list[index]
 end
 
-function List.pushright (list, value)
-  local last = list.last + 1
-  list.last = last
-  list[last] = value
+function List:set (index, value)
+  if not ( self.last >= index and index >= self.first ) then error("Index out of bounds") end
+  self.list[index] = value
 end
 
-function List.popleft (list)
-  local first = list.first
-  if first > list.last then error("list is empty") end
-  local value = list[first]
-  list[first] = nil        -- To allow garbage collection
-  list.first = first + 1
-  return value
+function List:insert (index, value)
+  self.list:insert(index, value)
 end
 
-function List.popright (list)
-  local last = list.last
-  if list.first > last then error("list is empty") end
-  local value = list[last]
-  list[last] = nil         -- To allow garbage collection
-  list.last = last - 1
+function List:clone ()
+  return deepcopy(self)
+end
+
+function List:pushRight (value)
+  local last = self.last + 1
+  self.last = last
+  self.list[last] = value
+end
+
+function List:popRight ()
+  local last = self.last
+  if self.first > last then error("List is empty") end
+  local value = self.list[last]
+  self.list[last] = nil         -- To allow garbage collection
+  self.list.last = last - 1
   return value
 end
