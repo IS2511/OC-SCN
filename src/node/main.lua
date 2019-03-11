@@ -39,7 +39,7 @@ local messageHash = {} -- Message hash in received order (works like a stack)
 function init()
 
   if fs.exists(rootDirName) then
-    if ~fs.isDirectory(rootDirName) then
+    if not fs.isDirectory(rootDirName) then
       fs.remove(rootDirName)
       fs.makeDirectory(rootDirName)
     end
@@ -48,7 +48,7 @@ function init()
   end
 
   if fs.exists(messageDirName) then
-    if ~fs.isDirectory(messageDirName) then
+    if not fs.isDirectory(messageDirName) then
       fs.remove(messageDirName)
       fs.makeDirectory(messageDirName)
     end
@@ -79,7 +79,7 @@ end
 function scan ()
   calculateHops()
   for k, v in pairs(nodeFriends) do
-    if ~v.ping then
+    if not v.ping then
       v.online = false
     end
     v.ping = false
